@@ -1,0 +1,13 @@
+---
+# tasks file for roles/winupdate
+- name: install all critical and security updates
+  win_updates:
+    category_names:
+      - CriticalUpdates
+      - SecurityUpdates
+    state: installed
+  register: update_result
+- name: reboot host if required
+  win_reboot:
+    reboot_timeout: 1200
+  when: update_result.reboot_required

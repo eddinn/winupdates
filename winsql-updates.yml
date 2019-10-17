@@ -1,0 +1,28 @@
+---
+  - hosts: windows
+    vars:
+      ansible_user: domain\username
+      ansible_password: password # NOTE! You should use ansible vault for this
+      ansible_port: 5985
+      ansible_winrm_scheme: http
+      ansible_winrm_send_cbt: no
+      ansible_connection: winrm
+      ansible_winrm_transport: ntlm
+      ansible_winrm_server_cert_validation: ignore
+    tasks:
+    - include_role:
+        name: winupdate
+      #- name: install all critical and security updates
+      #  win_updates:
+      #    category_names:
+      #      - CriticalUpdates
+      #      - SecurityUpdates
+      #      - Updates
+      #      - ImportantUpdates
+      #      - DefinitionUpdates
+      #    state: installed
+      #  register: update_result
+      #- name: reboot host if required
+      #  win_reboot:
+      #    reboot_timeout: 1200
+      #  when: update_result.reboot_required

@@ -1,0 +1,15 @@
+---
+  - hosts: windows
+    gather_facts: no
+    vars:
+      ansible_user: domain\username
+      ansible_password: password # NOTE! You should use ansible vault for this
+      ansible_port: 5985
+      ansible_winrm_scheme: http
+      ansible_winrm_send_cbt: no
+      ansible_connection: winrm
+      ansible_winrm_transport: ntlm
+      ansible_winrm_server_cert_validation: ignore
+    tasks:
+      - name: ping
+        win_ping:
