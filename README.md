@@ -31,4 +31,12 @@ You can customize it with vars, and edit the `tasks/main.yml` if needed.
 The `main.yml` file contains the tasks/actions to be carried out by the role, and you need to update it to your needs if you want to disable rebooting, edit update severity categories and so on.
 By default it installs Critical and Security updates, and reboots the machine if required.
 
-### Note: Make sure to edit the vars accordingly to your setup if needed
+> Note: Make sure to edit the vars accordingly to your setup if needed
+
+### Handy links for reference
+
+How to setup WinRM:
+<https://www.ansible.com/blog/connecting-to-a-windows-host>
+
+How to use Ansible Vault:
+<https://serversforhackers.com/c/how-ansible-vault-works>
