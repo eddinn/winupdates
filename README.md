@@ -10,6 +10,9 @@ Use the `winrm-config.ps1` PowerShell script to configure WinRM on servers that 
 Make sure to adjust the script to your needs, usually the defaults are suficient.
 FYI: The defaults use cert authentication to connect.
 
+> Note: install winrm on the ansible host for it to work via pip in your terminal:
+`pip install pywinrm`
+
 ## The `hosts` file
 
 4 hostsgroups and 1 vargroup are in the file:
